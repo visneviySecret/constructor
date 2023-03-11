@@ -5,4 +5,6 @@ export const Color = {
   LightBorder: '#E2E3E5',
   DarkText: '#4D5562',
   Display: '#111827',
+  Text: '#6B7280',
+  LightBlue50: '#F0F9FF',
 }
