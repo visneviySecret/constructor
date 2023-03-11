@@ -2,8 +2,9 @@ import { Color } from '@/utils/const'
 import styled from 'styled-components'
 
 export const ButtonComponent = styled.button<{ isBackground?: boolean }>`
-  min-width: 3.25rem;
-  padding: 1rem;
+  width: 100%;
+  min-width: 48px;
+  padding: 1rem 1.3rem;
   height: 100%;
 
   background: ${(props) => (props.isBackground ? Color.Primal : '#ffffff')};
