@@ -21,9 +21,9 @@ export const Switch = styled.div<{ isActive: boolean }>`
   background-color: white;
   border: 1px solid ${Color.LightBorder};
   border-radius: 5px;
-  width: ${(props) => (props.isActive ? ' 110px' : '133px')};
+  width: ${(props) => (props.isActive ? ' 108px' : '133px')};
   height: 95%;
   margin: 1px;
 
-  transition: translate 0.5s;
+  transition: translate 0.5s, width 0.5s;
 `

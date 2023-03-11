@@ -15,7 +15,7 @@ const Button = styled.div`
   z-index: 3;
   display: flex;
   align-items: center;
-  gap: 0.625rem;
+  gap: 0.3rem;
   padding: 0.5rem 0.75rem;
   color: ${Color.DarkText};
 `

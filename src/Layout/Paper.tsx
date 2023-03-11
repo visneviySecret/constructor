@@ -1,7 +1,5 @@
 import { ReactNode } from 'react'
 import styled from 'styled-components'
-import { useSelector } from 'react-redux/es/exports'
-import { selectStatusState } from '@/redux/slice'
 import { AppStatus } from '@/utils/types'
 
 interface IProps {
@@ -17,13 +15,9 @@ export const Container = styled.div<{ isDisabled?: boolean }>`
   padding: 4px;
   opacity: ${({ isDisabled }) => isDisabled && '50%'};
 
-  transition: opacity 0.5s;
+  transition: opacity;
 `
 
 export const Paper = ({ children }: IProps) => {
-  const statusState = useSelector(selectStatusState)
-
-  const isDisabled = statusState === AppStatus.runtime
-
-  return <Container isDisabled={isDisabled}>{children}</Container>
+  return <Container>{children}</Container>
 }
