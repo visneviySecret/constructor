@@ -3,10 +3,16 @@ import { ButtonComponent } from './Button.style'
 
 interface IProps {
   children: ReactNode
+  onClick: () => void
+  isBackground?: boolean
 }
 
-const Button = ({ children }: IProps) => {
-  return <ButtonComponent>{children}</ButtonComponent>
+const Button = ({ children, isBackground, onClick }: IProps) => {
+  return (
+    <ButtonComponent onClick={onClick} isBackground={isBackground}>
+      {children}
+    </ButtonComponent>
+  )
 }
 
 export { Button }
