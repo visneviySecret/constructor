@@ -1,13 +1,14 @@
 import { Color } from '@/utils/const'
 import styled from 'styled-components'
 
-export const Container = styled.div<{ isHoverDrop?: boolean }>`
+export const Container = styled.div<{ isHovered?: boolean }>`
   position: relative;
   width: 100%;
   max-width: 243px;
   border: 2px dashed ${Color.DashedBorder};
-  background-color: ${({ isHoverDrop }) => isHoverDrop && Color.LightBlue50};
   border-radius: 6px;
+
+  background-color: ${({ isHovered }) => isHovered && Color.LightBlue50};
 `
 export const Wrapper = styled.div`
   position: absolute;

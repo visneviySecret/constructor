@@ -2,7 +2,6 @@ import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
   :root {
-    font-family: 'Inter';
     max-width: 100vw;
   }
 
@@ -29,6 +28,10 @@ const GlobalStyles = createGlobalStyle`
     color: inherit;
     text-decoration: none;
   }
+  #droppable div { 
+    opacity: 100%;
+
+   }
 
   @media (prefers-color-scheme: dark) {
     html {

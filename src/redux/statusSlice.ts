@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { AppState } from './store'
-import { HYDRATE } from 'next-redux-wrapper'
 import { AppStatus } from '@/utils/types'
 
 export interface StatusState {
@@ -17,15 +16,6 @@ export const statusSlice = createSlice({
   reducers: {
     setStatusState(state, action) {
       state.statusState = action.payload
-    },
-  },
-
-  extraReducers: {
-    [HYDRATE]: (state, action) => {
-      return {
-        ...state,
-        ...action.payload.status,
-      }
     },
   },
 })

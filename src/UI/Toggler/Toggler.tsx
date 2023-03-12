@@ -2,7 +2,7 @@ import React from 'react'
 import { Switch, Wrapper } from './Toggler.style'
 import { AppStatus } from '@/utils/types'
 import ButtonWrapper from './components/ButtonWrapper'
-import { selectStatusState } from '@/redux/slice'
+import { selectStatusState } from '@/redux/statusSlice'
 import { useSelector } from 'react-redux'
 
 interface IProps {

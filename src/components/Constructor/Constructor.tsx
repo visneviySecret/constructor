@@ -1,21 +1,22 @@
 import React from 'react'
-import { Display } from '../Display/Display'
-import Equal from '../Equal/Equal'
-import FuncPad from '../FuncPad/FuncPad'
-import NumPad from '../NumPad/NumPad'
+import { Draggable } from '@/Layout/Draggable/Draggable'
+import { selectStatusState } from '@/redux/statusSlice'
+import { AppStatus } from '@/utils/types'
+import { useSelector } from 'react-redux'
 import { Container } from './Constructor.style'
+import { Blocks } from '../Blocks/Block'
 
-interface IProps {
-  value?: number
-}
+function Constructor() {
+  const statusState = useSelector(selectStatusState)
+  const isDraggable = statusState === AppStatus.constructor
 
-function Constructor({ value }: IProps) {
   return (
     <Container>
-      <Display />
-      <FuncPad />
-      <NumPad />
-      <Equal />
+      {Blocks.map((item) => (
+        <Draggable key={item.id} id={item.id} isDraggable={isDraggable}>
+          {item.node}
+        </Draggable>
+      ))}
     </Container>
   )
 }

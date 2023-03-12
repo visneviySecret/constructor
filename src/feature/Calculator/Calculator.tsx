@@ -2,14 +2,13 @@ import { Inter } from 'next/font/google'
 import React from 'react'
 import Section from '@/Layout/Section'
 import Toggler from '@/UI/Toggler/Toggler'
-import Runtime from '@/components/Constructor/Constructor'
-import Constructor from '@/components/Runtime/Runtime'
 import { AppStatus } from '@/utils/types'
 import Head from 'next/head'
 import { useSelector } from 'react-redux'
-import { selectStatusState, setStatusState } from '@/redux/slice'
+import { selectStatusState, setStatusState } from '@/redux/statusSlice'
 import { useDispatch } from 'react-redux'
 import { Container } from './Calculator.style'
+import Board from '@/components/Board/Board'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -50,8 +49,7 @@ function Calculator() {
           </Section>
 
           <Section>
-            <Runtime />
-            <Constructor />
+            <Board />
           </Section>
         </Container>
       </main>
