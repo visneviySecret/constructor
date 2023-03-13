@@ -8,5 +8,9 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
+`
+
+export const DraggablePlace = styled.div`
+  flex-grow: 1;
 `

@@ -16,6 +16,6 @@ export const Content = styled.div`
   background-color: ${Color.Background};
 
   font-weight: 800;
-  font-size: 2.25rem;
+  font-size: clamp(1.5rem, 1vw, 2.25rem);
   line-height: 2.75rem;
 `

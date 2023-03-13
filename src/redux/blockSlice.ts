@@ -1,13 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { AppState } from './store'
-import { BlockIDs } from '@/utils/types'
+import { AppStatus, BlockIDs } from '@/utils/types'
 
 export interface BlockState {
-  blockState: BlockIDs | null
+  blockState: {
+    id: BlockIDs | null
+    status: AppStatus | null
+  }
 }
 
 const initialState: BlockState = {
-  blockState: null,
+  blockState: { id: null, status: null },
 }
 
 export const blockSlice = createSlice({

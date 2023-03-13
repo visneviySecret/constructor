@@ -14,19 +14,19 @@ export const buildSlice = createSlice({
   name: 'build',
   initialState,
   reducers: {
-    addBlockToBuild(state, action) {
-      state.buildState = [...state.buildState, ...action.payload]
-    },
     removeBlockFromBuild(state, action) {
       const newBuild = state.buildState.filter(
         (item) => item.id !== action.payload
       )
       state.buildState = newBuild
     },
+    updateBuild(state, action) {
+      state.buildState = action.payload
+    },
   },
 })
 
-export const { addBlockToBuild, removeBlockFromBuild } = buildSlice.actions
+export const { removeBlockFromBuild, updateBuild } = buildSlice.actions
 
 export const selectBuildState = (state: AppState) => state.build.buildState
 

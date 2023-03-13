@@ -17,7 +17,6 @@ const GlobalStyles = createGlobalStyle`
     max-width: 540px;
     margin: 0 auto;
     font-family: 'Inter';
-    overflow-x: hidden;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;

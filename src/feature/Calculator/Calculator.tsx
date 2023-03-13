@@ -9,6 +9,7 @@ import { selectStatusState, setStatusState } from '@/redux/statusSlice'
 import { useDispatch } from 'react-redux'
 import { Container } from './Calculator.style'
 import Board from '@/components/Board/Board'
+import { updateCalc } from '@/redux/calcSlice'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,6 +23,7 @@ function Calculator() {
         ? AppStatus.constructor
         : AppStatus.runtime
     dispatch(setStatusState(newStatus))
+    dispatch(updateCalc(0))
   }
 
   return (

@@ -1,16 +1,24 @@
-import { Paper } from '@/Layout/Paper'
+import { selectCalcState } from '@/redux/calcSlice'
+import { selectStatusState } from '@/redux/statusSlice'
+import { AppStatus } from '@/utils/types'
+import { useSelector } from 'react-redux'
 import { Content, Wrapper } from './Display.style'
 
-interface IProps {
-  value?: number
-}
+export const Display = () => {
+  const value = useSelector(selectCalcState)
+  const status = useSelector(selectStatusState)
 
-export const Display = ({ value = 0 }: IProps) => {
+  const getCorrectValue = (value: string) => {
+    if (value == 'NaN' || Number(value) === Infinity || value === undefined)
+      return 'Не определено'
+    return value
+  }
+
   return (
-    <Paper>
-      <Wrapper>
-        <Content>{value}</Content>
-      </Wrapper>
-    </Paper>
+    <Wrapper>
+      <Content>
+        {status === AppStatus.constructor ? 0 : getCorrectValue(value)}
+      </Content>
+    </Wrapper>
   )
 }

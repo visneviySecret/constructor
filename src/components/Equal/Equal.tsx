@@ -1,7 +1,8 @@
-import { Paper } from '@/Layout/Paper'
+import { equalCalc } from '@/redux/calcSlice'
 import { Button } from '@/UI/Button/Button'
 import { Color } from '@/utils/const'
 import React from 'react'
+import { useDispatch } from 'react-redux'
 
 const style = {
   border: 'none',
@@ -10,10 +11,16 @@ const style = {
 }
 
 function Equal() {
+  const dispatch = useDispatch()
+
+  const handleClick = () => {
+    dispatch(equalCalc())
+  }
+
   return (
-    <Paper>
-      <Button style={style}>=</Button>
-    </Paper>
+    <Button onClick={handleClick} style={style}>
+      =
+    </Button>
   )
 }
 

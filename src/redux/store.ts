@@ -3,6 +3,7 @@ import { statusSlice } from './statusSlice'
 import { blockSlice } from './blockSlice'
 import { buildSlice } from './buildSlice'
 import { createWrapper } from 'next-redux-wrapper'
+import { calcSlice } from './calcSlice'
 
 const makeStore = () =>
   configureStore({
@@ -10,6 +11,7 @@ const makeStore = () =>
       [statusSlice.name]: statusSlice.reducer,
       [blockSlice.name]: blockSlice.reducer,
       [buildSlice.name]: buildSlice.reducer,
+      [calcSlice.name]: calcSlice.reducer,
     },
     devTools: true,
     middleware: (getDefaultMiddleware) =>
