@@ -1,20 +1,20 @@
-import React, { useState } from 'react'
-import { BlockIDs } from '@/utils/types'
+import React, { DragEvent, useState } from 'react'
+import { AppStatus, BlockIDs } from '@/utils/types'
 import { Drop } from '../../../public/assets/drop'
 import { Container, Subtitle, Title, Wrapper } from './EmptyPage.style'
 import { Draggable } from '@/Layout/Draggable/Draggable'
 
-function EmptyPage() {
+function EmptyPage({ status }: { status: AppStatus }) {
   const [isHovered, setIsHoverd] = useState(false)
 
-  const handleLeave = (event) => {
+  const handleLeave = () => {
     setIsHoverd(false)
   }
-  const handleOver = (event) => {
+  const handleOver = (event: DragEvent<HTMLDivElement>) => {
     event.preventDefault()
     setIsHoverd(true)
   }
-  const handleDrop = (event) => {
+  const handleDrop = (event: DragEvent<HTMLDivElement>) => {
     event.preventDefault()
     setIsHoverd(false)
   }
@@ -26,7 +26,7 @@ function EmptyPage() {
       onDragOver={handleOver}
       onDrop={handleDrop}
     >
-      <Draggable id={BlockIDs.buildPage} isDraggable={false}>
+      <Draggable id={BlockIDs.buildPage} isDraggable={false} status={status}>
         <Wrapper>
           <Drop />
           <Title> Перетащите сюда</Title>

@@ -21,7 +21,7 @@ function Runtime({}: IProps) {
   const [isHoverTopBuild, setIsHoverTopBuild] = useState(false)
 
   if (statusState !== AppStatus.runtime && buildState.length === 0)
-    return <EmptyPage />
+    return <EmptyPage status={statusState} />
 
   return (
     <Container>
