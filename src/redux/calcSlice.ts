@@ -49,7 +49,6 @@ export const calcSlice = createSlice({
       state.calcDisplayState = '0'
     },
     equalCalc(state) {
-      console.log('state.action', state.action)
       switch (state.action) {
         case CalcAction.division: {
           const newState =
