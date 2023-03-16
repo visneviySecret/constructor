@@ -2,7 +2,7 @@ import React, { DragEvent, useState } from 'react'
 import { AppStatus, BlockIDs } from '@/utils/types'
 import { Drop } from '../../../public/assets/drop'
 import { Container, Subtitle, Title, Wrapper } from './EmptyPage.style'
-import { Draggable } from '@/Layout/Draggable/Draggable'
+import { Draggable } from '@/utils/Draggable/Draggable'
 
 function EmptyPage({ status }: { status: AppStatus }) {
   const [isHovered, setIsHoverd] = useState(false)

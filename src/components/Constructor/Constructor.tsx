@@ -1,5 +1,5 @@
 import React from 'react'
-import { Draggable } from '@/Layout/Draggable/Draggable'
+import { Draggable } from '@/utils/Draggable/Draggable'
 import { selectStatusState } from '@/redux/statusSlice'
 import { AppStatus } from '@/utils/types'
 import { useSelector } from 'react-redux'
@@ -12,6 +12,7 @@ function Constructor() {
   const buildState = useSelector(selectBuildState)
   const isDraggable = statusState === AppStatus.constructor
   const isDisabled = statusState === AppStatus.runtime
+  const isHide = statusState === AppStatus.runtime
 
   return (
     <Container>
@@ -19,7 +20,6 @@ function Constructor() {
         const isUsed =
           buildState.filter((buildItem) => buildItem.id === item.id).length !==
           0
-        const isHide = isUsed && statusState === AppStatus.runtime
         {
           return (
             !isHide && (
