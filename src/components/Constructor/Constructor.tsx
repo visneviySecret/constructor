@@ -1,5 +1,5 @@
 import React from 'react'
-import { Draggable } from '@/utils/Draggable/Draggable'
+import { Draggable } from '@/components/Draggable/Draggable'
 import { selectStatusState } from '@/redux/statusSlice'
 import { AppStatus } from '@/utils/types'
 import { useSelector } from 'react-redux'
